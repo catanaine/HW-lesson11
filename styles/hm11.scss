@@ -1,0 +1,125 @@
+@import '../mixin/mixins';
+
+main {
+    background-image: var(--bg-image);
+    padding: 60px 0;
+}
+
+.divtest {
+    border-bottom: 5px dashed green;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) ;
+    place-items: center;
+    gap: 45px 12px;
+
+    @include desktop_max {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include desktop {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include tableta {
+        grid-template-columns: (1fr, 1fr);
+    }
+
+    @include mobile {
+        grid-template-columns: (1fr);
+    }
+}
+
+.block {
+
+    &__element {
+        @include element(140px, 140px);
+        @include element_text_amplasare(14px);
+        @include elementImage();
+
+
+        &--image1 {
+            background-image: url(/image1.jpg);
+        }
+
+        &--image2 {
+            background-image: url(image2.jpg);
+        }
+
+        &--image3 {
+            background-image: url(image3.jpg);
+        }
+
+        &--image4 {
+            background-image: url(/image4.png);
+        }
+
+        &--image5 {
+            background-image: url(/image5.png);
+        }
+
+        &--image6 {
+            background-image: url(/image6.jpg);
+        }
+
+        &--image7 {
+            background-image: url(/image7.jpg);
+        }
+
+        &--image8 {
+            background-image: url(/image8.jpg);
+        }
+
+        &--image9 {
+            background-image: url(/image9.jpg);
+        }
+
+        &--image10 {
+            background-image: url(/image10.png);
+        }
+
+        &--image11 {
+            background-image: url(/image11.png);
+        }
+
+        &--image12 {
+            background-image: url(/image12.jpg);
+        }
+
+    }
+
+    &__input {
+        display: none;
+
+        &:checked~.block__element {
+            opacity: 45%;
+
+        }
+    }
+
+    @include desktop_max {
+        @include element(160px, 160px);
+        @include elementImage;
+        @include element_text_amplasare(18px);
+    }
+
+    @include desktop {
+        @include element(140px, 140px);
+        @include elementImage;
+        @include element_text_amplasare(14px);
+    }
+
+    @include tableta {
+        @include element(90px, 90px);
+        @include elementImage;
+        @include element_text_amplasare(10px);
+    }
+
+    @include mobile {
+        @include element(60px, 60px);
+        @include elementImage;
+        @include element_text_amplasare(8px);
+    }
+}

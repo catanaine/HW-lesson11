@@ -1,0 +1,59 @@
+:root {
+    margin: 0;
+    --bg-image: radial-gradient(rgb(246, 208, 238), pink 25%, rgb(102, 55, 100) 75%);
+    --font-size: 14px;
+    --bg-color: red;
+}
+
+
+
+@mixin element ($h: 140px, $w: 140px){
+    background-color: var(--bg-color);
+    height: $h;
+    width: $w;
+    border-radius: 35%;
+    cursor: pointer;
+
+}
+
+@mixin element_text_amplasare ($font-size: 14px){
+    font-size: var(--font-size);
+    color: white;
+    display: grid;
+    align-items: end;
+    justify-items: center;
+}
+
+// @mixin elementAmplasare {
+//     display: grid;
+//     align-items: end;
+//     justify-items: center;
+// }
+
+@mixin elementImage {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: rgb(53, 7, 62);
+}
+
+@mixin mobile {
+    @media (max-widht: 499px) {
+        @content;
+    }
+}
+@mixin tableta {
+    @media (max-widht: 699px) and (min-width: 500px) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (max-widht: 999px) and (min-width: 700px) {
+        @content;
+    }
+}
+@mixin desktop_max {
+    @media (min-width: 1000px) {
+        @content;
+    }
+}
